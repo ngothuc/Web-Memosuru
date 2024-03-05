@@ -10,7 +10,12 @@
 > npm install -g create-react-app
 - Vào folder chưa project:
 > create-react-app my-app
-> cd my-app
-> npm start
 
 *Note: my-app là tên project, có thể thay đổi cho phù hợp*
+
+- Đợi cài đặt xong
+![](../TaiLieu/pictures/create_react_app.PNG)
+
+- Để chạy project:
+> cd my-app
+> npm start

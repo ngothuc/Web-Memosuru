@@ -1,7 +1,6 @@
-let x = 5, y =6, z = `NVT`;
-
-console.log(`x =`, x, `y =`, y, `z =`, z);
-console.log(`x = ` + x + ` y = ` + y + ` z = ` + z);
-console.log(4 + 5 + `a`);
-console.log(4 + `a` + 5);
-console.log(`a` + `a`);
+console.log(`Hello world from HTML`.toUpperCase());
+let a = 5;
+let b = 6;
+let c = 6.9;
+console.log(a + b);
+console.log(a + c);

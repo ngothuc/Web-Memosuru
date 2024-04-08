@@ -68,3 +68,11 @@ Nó được gọi là JSX, là một cú pháp mở rộng cho JavaScript.
 Nhúng biểu thức trong JSX:
 >const name = 'Josh Perez';
 >const element = \<h1>Hello, {name}\</h1>; 
+
+**Object trong JS**
+let obj = {
+    name: \`Ngo Thuc\`,
+    address: \'Tokyo\',
+};
+
+**Array trong JS**

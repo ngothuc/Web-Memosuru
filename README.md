@@ -7,3 +7,4 @@
 Cách các mục được sắp xếp trong repo này:
 - Lý thuyết sẽ đặt trong folder tài liệu. Từng mục như React, JavaScript, ... sẽ có thư mục riêng
 - Bài tập sẽ có thư mục riêng, không nằm trong mục tài liệu.
+- Làm lại game Tik Tac Toe

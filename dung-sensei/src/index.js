@@ -1,21 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-const Com = (props) => {
-    const counter = props.counter;
-    const setCounter = props.setCounter;
-    return <button onClick={() => setCounter(counter + 1)}>Dũng Sensei Vô Địch</button>
-}
-
-export default function App() {
-    const [counter, setCounter] = useState(0);
-    return (
-        <div>
-            <Com counter={counter} setCounter={setCounter} />
-            <h1>Counter: {counter}</h1>
-        </div>
-    )
-}
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

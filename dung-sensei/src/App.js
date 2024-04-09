@@ -1,21 +1,33 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 
-export default function App() {
-  const [width, setWidth] = useState(window.innerWidth);
+function Com() {
+  console.log('Com render');
+  useEffect(() => {
+    console.log('Com Effect');
+  }, []);
+  return (
+    <></>
+  )
+}
 
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-  }
+
+export default function App() {
+  const [counter, setCounter] = useState(0);
+  console.log('App render, counter: ', counter);
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    console.log('App effect, counter: ', counter);
+    if (counter < 5) setCounter(counter+1);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      console.log('App cleanup');
     }
-  }, []);
+  }, [counter]);
 
-  return <>Window Width: {width}</>
-
-
+  return (
+    <>
+    Counter: {counter}
+    <Com />
+    </>
+  )
 }

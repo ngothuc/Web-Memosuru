@@ -1,33 +1,42 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-
-function Com() {
-  console.log('Com render');
-  useEffect(() => {
-    console.log('Com Effect');
-  }, []);
-  return (
-    <></>
-  )
-}
-
+import { Table, TableHead, TableRow, TableBody, TableCell } from '@mui/material'
 
 export default function App() {
-  const [counter, setCounter] = useState(0);
-  console.log('App render, counter: ', counter);
+
+  const [items, setItem] = useState([]);
 
   useEffect(() => {
-    console.log('App effect, counter: ', counter);
-    if (counter < 5) setCounter(counter+1);
-    return () => {
-      console.log('App cleanup');
-    }
-  }, [counter]);
+    fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      setItem(data);
+    })
+  },  []);
 
-  return (
+  return(
     <>
-    Counter: {counter}
-    <Com />
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>ID</TableCell>
+            <TableCell>USerID</TableCell>
+            <TableCell>Title</TableCell>
+            <TableCell>Content</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {items.map((item) => (
+            <TableRow>
+              <TableCell>{item.id}</TableCell>
+              <TableCell>{item.userId}</TableCell>
+              <TableCell>{item.title}</TableCell>
+              <TableCell>{item.body}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </>
   )
 }

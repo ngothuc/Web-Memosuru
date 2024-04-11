@@ -4,34 +4,35 @@ import { Table, TableHead, TableRow, TableBody, TableCell } from '@mui/material'
 
 export default function App() {
 
-  const [items, setItem] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://jsonplaceholder.typicode.com/comments")
     .then(res => res.json())
     .then(data => {
-      console.log(data);
-      setItem(data);
+      setItems(data);
     })
-  },  []);
+  }, []);
 
-  return(
+  return (
     <>
       <Table>
         <TableHead>
           <TableRow>
+            <TableCell>PostID</TableCell>
             <TableCell>ID</TableCell>
-            <TableCell>USerID</TableCell>
-            <TableCell>Title</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Email</TableCell>
             <TableCell>Content</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {items.map((item) => (
             <TableRow>
+              <TableCell>{item.postId}</TableCell>
               <TableCell>{item.id}</TableCell>
-              <TableCell>{item.userId}</TableCell>
-              <TableCell>{item.title}</TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.email}</TableCell>
               <TableCell>{item.body}</TableCell>
             </TableRow>
           ))}

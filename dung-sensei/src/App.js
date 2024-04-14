@@ -1,15 +1,26 @@
+import { useState } from 'react'
 import './App.css'
 
 export default function App() {
+  const [left, setLeft] = useState(true);
+  const theme = {
+    backgroundColor: "lightgreen",
+    display: "flex",
+    justifyContent: left ? "flex-start" : "flex-end",
+  };
+
   return (
-    <div className="container">
-      <div className="item">1</div>
-      <div className="item">2</div>
-      <div className="item">3</div>
-      <div className="item">4</div>
-      <div className="item">5</div>
-      <div className="item">6</div>
-      <div className="item">7</div>
+    <div>
+      <div>
+        <div style={theme}>
+          <h3>LOGIN</h3>
+        </div>
+        <div>
+          <button onClick={() => setLeft(!left)}>
+            Change Position
+          </button>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
